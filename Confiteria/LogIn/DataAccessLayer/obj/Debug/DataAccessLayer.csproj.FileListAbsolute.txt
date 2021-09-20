@@ -1,0 +1,9 @@
+C:\Proyecyos\LogIn\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Proyecyos\LogIn\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Proyecyos\LogIn\DataAccessLayer\bin\Debug\Entities.dll
+C:\Proyecyos\LogIn\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

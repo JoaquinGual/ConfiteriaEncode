@@ -1,0 +1,11 @@
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\Entities.dll
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Proyecyos\LogIn\BusinessLogicLayer\bin\Debug\Entities.pdb
+C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
