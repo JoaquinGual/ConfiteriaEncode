@@ -54,3 +54,12 @@ create proc bajaMozos
 @id int
 as
 update Mozos set activo = 0 where idMozo = @id
+
+insert into Locales (direccion,activo)values('La pampa 1186',1)
+
+  alter table Mozos
+  alter column comision int
+
+  update Mozos 
+  set activo = 1
+  
