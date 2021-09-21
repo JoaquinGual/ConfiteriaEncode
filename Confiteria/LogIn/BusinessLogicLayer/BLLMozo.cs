@@ -7,7 +7,7 @@ using Entities;
 using DataAccessLayer;
 namespace BusinessLogicLayer
 {
-    class BLLMozo
+    public class BLLMozo
     {
         public static bool InsertarMozo(Mozo m)
         {

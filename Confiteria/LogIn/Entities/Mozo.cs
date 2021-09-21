@@ -31,9 +31,9 @@ namespace Entities
             set { apellido = value; }
         }
 
-        private float comision;
+        private int comision;
 
-        public float pComision
+        public int pComision
         {
             get { return comision; }
             set { comision = value; }
@@ -67,7 +67,7 @@ namespace Entities
 			activo = false;
         }
 
-        public Mozo(int id,string nom,string ape,float com,int idloc,bool act)
+        public Mozo(int id,string nom,string ape,int com,int idloc,bool act)
         {
             idMozo = id;
             nombre = nom;

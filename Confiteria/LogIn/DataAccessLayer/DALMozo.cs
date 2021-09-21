@@ -95,7 +95,7 @@ namespace DataAccessLayer
             }
             if (!lector.IsDBNull(3))
             {
-                m.pComision = lector.GetFloat(3);
+                m.pComision = lector.GetInt32(3);
             }
             if (!lector.IsDBNull(4))
             {

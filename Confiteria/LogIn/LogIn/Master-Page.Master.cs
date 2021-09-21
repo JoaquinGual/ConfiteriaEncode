@@ -13,29 +13,32 @@ namespace LogIn
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (Session["nombreuser"] != null && Session["tipouser"] != null )
+
+            if (!IsPostBack)
             {
-                string userName = Session["nombreuser"].ToString();
-                bool tipoUser = bool.Parse(Session["tipouser"].ToString());
-                lblBienvenido.Text = "Bienvenido: " + userName;
-
-                if (!tipoUser)
+                if (Session["nombreuser"] != null && Session["tipouser"] != null)
                 {
-                    registroUsuarios.Visible = false;
-                    listaUsuarios.Visible = false;
+                    string userName = Session["nombreuser"].ToString();
+                    bool tipoUser = bool.Parse(Session["tipouser"].ToString());
+                    lblBienvenido.Text = "Bienvenido: " + userName;
 
+                    if (!tipoUser)
+                    {
+                        registroUsuarios.Visible = false;
+                        listaUsuarios.Visible = false;
+
+                    }
+                    else
+                    {
+                        registroUsuarios.Visible = true;
+                        listaUsuarios.Visible = true;
+
+                    }
                 }
                 else
                 {
-                    registroUsuarios.Visible = true;
-                    listaUsuarios.Visible = true;
-
+                    Response.Redirect("Login.aspx?");
                 }
-            }
-            else
-            {
-                Response.Redirect("Login.aspx?");
             }
             
            
