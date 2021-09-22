@@ -63,3 +63,14 @@ insert into Locales (direccion,activo)values('La pampa 1186',1)
   update Mozos 
   set activo = 1
   
+
+  create proc actualizarMozo
+  @idMozo int,
+  @nombre varchar(80),
+  @apellido varchar (80),
+  @comision int,
+  @idLocal int,
+  @activo bit
+  as
+  update Mozos set nombre = @nombre , apellido = @apellido, comision = @comision , idLocal = @idLocal , activo = @activo
+  where idMozo = @idMozo

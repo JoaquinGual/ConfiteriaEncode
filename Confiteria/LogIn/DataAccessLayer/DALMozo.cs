@@ -135,6 +135,39 @@ namespace DataAccessLayer
 
         }
 
+        public static bool ActualizarMozo(Mozo m)
+        {
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "actualizarMozo";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@idMozo", m.pIdMozo);
+                oDatos.Comando.Parameters.AddWithValue("@Nombre", m.pNombre);
+                oDatos.Comando.Parameters.AddWithValue("@Apellido", m.pApellido);
+                oDatos.Comando.Parameters.AddWithValue("@Comision", m.pComision);
+                oDatos.Comando.Parameters.AddWithValue("@idLocal", m.pIdLocal);
+                oDatos.Comando.Parameters.AddWithValue("@Activo", m.pActivo);
+
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Comando.ExecuteNonQuery();
+
+                oDatos.CommitTransaction();
+                return true;
+            }
+            catch (Exception)
+            {
+                oDatos.BeginTransaction();
+                return false;
+
+            }
+        }
       
     }
 }

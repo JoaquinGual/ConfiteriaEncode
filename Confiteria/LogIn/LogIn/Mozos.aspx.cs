@@ -18,12 +18,17 @@ namespace LogIn
                 ViewState["primero"] = true;
                 
                 CargarListaMozos();
-                List<Local> LL = BLLLocal.CargarListaLocales("Locales");
-                
-                for (int i = 0; i < LL.Count; i++)
-                {
-                    cmbLocal.Items.Add(LL[i].pIdLocal.ToString());
-                }
+                CargarComboLocal(cmbLocal);
+            }
+        }
+
+        public void CargarComboLocal(DropDownList combo)
+        {
+            List<Local> LL = BLLLocal.CargarListaLocales("Locales");
+
+            for (int i = 0; i < LL.Count; i++)
+            {
+                combo.Items.Add(LL[i].pIdLocal.ToString());
             }
         }
 
@@ -40,23 +45,26 @@ namespace LogIn
         {
 
             Entities.Mozo m = new Entities.Mozo();
-            
-            m.pNombre = txtNombreMozo.Text;
-            m.pApellido = txtApellidoMozo.Text;
-            
-            m.pComision = int.Parse(txtComision.Text);
-            m.pIdLocal = int.Parse(cmbLocal.SelectedValue);
-            m.pActivo = chkActivo.Checked;
 
-            if (BLLMozo.InsertarMozo(m) == true)
+            if (ValidarDatos())
             {
+                m.pNombre = txtNombreMozo.Text;
+                m.pApellido = txtApellidoMozo.Text;
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "MInsertOk();", true);
-                CargarListaMozos();
-            }
-            else
-            {
-                Response.Write("<script>alert('inCorrecto')</script>");
+                m.pComision = int.Parse(txtComision.Text);
+                m.pIdLocal = int.Parse(cmbLocal.SelectedValue);
+                m.pActivo = chkActivo.Checked;
+
+                if (BLLMozo.InsertarMozo(m) == true)
+                {
+
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "MInsertOk();", true);
+                    CargarListaMozos();
+                }
+                else
+                {
+                    Response.Write("<script>alert('inCorrecto')</script>");
+                }
             }
         }
 
@@ -81,32 +89,33 @@ namespace LogIn
 
         }
 
-
-        protected void gvListaDeMozos_RowEditing(object sender, GridViewEditEventArgs e)
+        public bool ValidarDatos()
         {
-            //if (Session["idMozo"] != null)
-            //{
-            //    gvListaDeMozos.EditIndex = e.NewEditIndex;
-                
-                
-            //    List<Mozo> LM = (List<Mozo>)HttpContext.Current.Session["Mozos"];
-            //    Mozo m = LM.FirstOrDefault(u => u.pIdMozo == int.Parse(Session["idMozo"].ToString()));
+            if (cmbLocal.SelectedIndex == -1)
+            {
 
-            //    if (BLLMozo.bajaMozos(m))
-            //    {
-            //        Session["idMozo"] = null;
-            //    }
 
-                
-            //    HttpContext.Current.Session["Mozos"] = LM;
-            //    gvListaDeMozos.DataSource = LM;
-            //    gvListaDeMozos.DataBind();
-            //}
-            //else
-            //{
-            //    Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "SelectBefore();", true);
-            //}
+                return false;
+            }
+            if (txtNombreMozo.Text == "")
+            {
+
+                return false;
+            }
+            if (txtApellidoMozo.Text == "")
+            {
+
+                return false;
+            }
+            if (txtComision.Text == "")
+            {
+
+                return false;
+            }
+            return true;
         }
+
+
 
 
         protected void gvListaDeMozos_RowUpdating1(object sender, GridViewUpdateEventArgs e)
@@ -127,7 +136,8 @@ namespace LogIn
                         HttpContext.Current.Session["Mozos"] = LM;
                         gvListaDeMozos.DataSource = LM;
                         gvListaDeMozos.DataBind();
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "BajaOk();", true);
+                        
+                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "BajaOk();", true);
                         LimpiarLista();
                     }
                    
@@ -136,14 +146,15 @@ namespace LogIn
                 }
                 else
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "NotActive();", true);
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "NotActive();", true);
                     LimpiarLista();
                 }
                 
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "SelectBefore();", true);
+               
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "SelectBefore();", true);
             }
         }
 
@@ -158,6 +169,50 @@ namespace LogIn
             Session["idMozo"] = null;
             gvListaDeMozos.Rows[int.Parse(Session["index"].ToString())].Cells[7].Enabled = false;
             
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            List<Mozo> LM = (List<Mozo>)HttpContext.Current.Session["Mozos"];
+            Mozo m = LM.FirstOrDefault(u => u.pIdMozo == int.Parse(Session["idMozo"].ToString()));
+            ViewState["idMozoEdit"] = m.pIdMozo;
+            txtNombreMozoM.Text = m.pNombre;
+            txtApellidoMozoM.Text = m.pApellido;
+            txtComisionMozoM.Text = m.pComision.ToString() ;
+            CargarComboLocal(cmbSucursalMozoM);
+            cmbSucursalMozoM.SelectedValue = m.pIdLocal.ToString();
+            if (m.pActivo)
+            {
+                chkActivoMozoM.Checked = true;
+            }
+            else
+            {
+                chkActivoMozoM.Checked = false;
+            }
+
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Entities.Mozo m = new Entities.Mozo();
+            m.pIdMozo = int.Parse(ViewState["idMozoEdit"].ToString());
+            m.pNombre = txtNombreMozoM.Text;
+            m.pApellido = txtApellidoMozoM.Text;
+
+            m.pComision = int.Parse(txtComisionMozoM.Text);
+            m.pIdLocal = int.Parse(cmbLocal.SelectedValue);
+            m.pActivo = chkActivoMozoM.Checked;
+
+            if (BLLMozo.ActualizarMozo(m) == true)
+            {
+
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "MUpdateOk();", true);
+                CargarListaMozos();
+            }
+            else
+            {
+                Response.Write("<script>alert('inCorrecto')</script>");
+            }
         }
     }
 }

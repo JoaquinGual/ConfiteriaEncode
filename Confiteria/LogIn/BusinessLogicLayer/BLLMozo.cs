@@ -13,8 +13,12 @@ namespace BusinessLogicLayer
         {
             return DALMozo.InsertarMozo(m);
         }
+        public static bool ActualizarMozo(Mozo m)
+        {
+            return DALMozo.ActualizarMozo(m);
+        }
 
-      
+
 
         public static List<Mozo> CargarListaMozo(string tabla)
         {
