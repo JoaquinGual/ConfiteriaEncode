@@ -26,12 +26,15 @@ namespace LogIn
                     {
                         registroUsuarios.Visible = false;
                         listaUsuarios.Visible = false;
+                        registroMozos.Visible = false;
+                        
 
                     }
                     else
                     {
                         registroUsuarios.Visible = true;
                         listaUsuarios.Visible = true;
+                        registroMozos.Visible = true;
 
                     }
                 }

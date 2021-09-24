@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALArticulo.cs" />
     <Compile Include="DALLocal.cs" />
     <Compile Include="DALMozo.cs" />
+    <Compile Include="DALRubro.cs" />
     <Compile Include="DALUser.cs" />
     <Compile Include="Datos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articulo.cs" />
     <Compile Include="Local.cs" />
     <Compile Include="Mozo.cs" />
+    <Compile Include="Rubro.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

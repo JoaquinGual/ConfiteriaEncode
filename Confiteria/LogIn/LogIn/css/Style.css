@@ -11702,6 +11702,12 @@ a[data-toggle="collapse"] {
     font-style:normal;
     font-weight:bold;
 }
+.titulo {
+    font-size: 33px;
+    color: #3c93c9;
+    font-style: normal;
+    font-weight: bold;
+}
 
 
 

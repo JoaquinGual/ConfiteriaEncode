@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLArticulo.cs" />
     <Compile Include="BLLLocal.cs" />
     <Compile Include="BLLMozo.cs" />
+    <Compile Include="BLLRubro.cs" />
     <Compile Include="BLLUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

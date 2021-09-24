@@ -42,6 +42,15 @@ namespace LogIn
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl listaUsuarios;
 
         /// <summary>
+        /// Control registroMozos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registroMozos;
+
+        /// <summary>
         /// Control lblBienvenido.
         /// </summary>
         /// <remarks>

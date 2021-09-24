@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="css\estilos.css" />
     <Content Include="css\Style.css" />
+    <Content Include="GenerarFactura.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Lista.aspx" />
     <Content Include="Login.aspx" />
@@ -76,6 +77,8 @@
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Mozos.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="RegistroArticulos.aspx" />
+    <Content Include="RegistroRubros.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -84,6 +87,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenerarFactura.aspx.cs">
+      <DependentUpon>GenerarFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerarFactura.aspx.designer.cs">
+      <DependentUpon>GenerarFactura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +136,20 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroArticulos.aspx.cs">
+      <DependentUpon>RegistroArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroArticulos.aspx.designer.cs">
+      <DependentUpon>RegistroArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroRubros.aspx.cs">
+      <DependentUpon>RegistroRubros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroRubros.aspx.designer.cs">
+      <DependentUpon>RegistroRubros.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

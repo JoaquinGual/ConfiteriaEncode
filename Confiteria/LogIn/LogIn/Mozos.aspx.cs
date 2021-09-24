@@ -24,12 +24,15 @@ namespace LogIn
 
         public void CargarComboLocal(DropDownList combo)
         {
-            List<Local> LL = BLLLocal.CargarListaLocales("Locales");
+            List<Local> LLV = BLLLocal.CargarListaLocales("Locales").FindAll(u => u.pActivo == true);
 
-            for (int i = 0; i < LL.Count; i++)
+
+            for (int i = 0; i < LLV.Count; i++)
             {
-                combo.Items.Add(LL[i].pIdLocal.ToString());
+
+                combo.Items.Add(new ListItem(LLV[i].pDireccion, LLV[i].pIdLocal.ToString()));
             }
+            
         }
 
         public void CargarListaMozos()
