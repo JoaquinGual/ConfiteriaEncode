@@ -9,3 +9,14 @@ C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCo
 C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
 C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 C:\Proyecyos\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Debug\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

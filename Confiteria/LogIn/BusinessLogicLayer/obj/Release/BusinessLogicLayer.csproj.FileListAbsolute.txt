@@ -1,0 +1,11 @@
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\BusinessLogicLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\BusinessLogicLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\DataAccessLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\bin\Release\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Release\BusinessLogicLayer.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Release\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Release\BusinessLogicLayer.csproj.CopyComplete
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Release\BusinessLogicLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\BusinessLogicLayer\obj\Release\BusinessLogicLayer.pdb

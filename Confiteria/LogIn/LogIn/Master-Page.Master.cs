@@ -27,7 +27,9 @@ namespace LogIn
                         registroUsuarios.Visible = false;
                         listaUsuarios.Visible = false;
                         registroMozos.Visible = false;
-                        
+                        registroRubros.Visible = false;
+                        registroArticulos.Visible = false;
+                        generarFactura.Visible = true;
 
                     }
                     else
@@ -35,6 +37,9 @@ namespace LogIn
                         registroUsuarios.Visible = true;
                         listaUsuarios.Visible = true;
                         registroMozos.Visible = true;
+                        registroRubros.Visible = true;
+                        registroArticulos.Visible = true;
+                        generarFactura.Visible = true;
 
                     }
                 }

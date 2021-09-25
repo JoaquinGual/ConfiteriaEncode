@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLArticulo.cs" />
+    <Compile Include="BLLDetalle_Factura.cs" />
+    <Compile Include="BLLFactura.cs" />
     <Compile Include="BLLLocal.cs" />
     <Compile Include="BLLMozo.cs" />
     <Compile Include="BLLRubro.cs" />

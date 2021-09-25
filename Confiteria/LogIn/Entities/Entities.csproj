@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
+    <Compile Include="Detalle_Factura.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Local.cs" />
     <Compile Include="Mozo.cs" />
     <Compile Include="Rubro.cs" />

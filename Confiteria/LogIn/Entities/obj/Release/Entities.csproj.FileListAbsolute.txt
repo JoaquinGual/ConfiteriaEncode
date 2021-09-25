@@ -1,0 +1,6 @@
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\bin\Release\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\bin\Release\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Release\Entities.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Release\Entities.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Release\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Release\Entities.pdb

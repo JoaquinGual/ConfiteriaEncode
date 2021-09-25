@@ -4,3 +4,9 @@ C:\Proyecyos\LogIn\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
 C:\Proyecyos\LogIn\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\Proyecyos\LogIn\Entities\obj\Debug\Entities.dll
 C:\Proyecyos\LogIn\Entities\obj\Debug\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\bin\Debug\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\bin\Debug\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Debug\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\Entities\obj\Debug\Entities.pdb

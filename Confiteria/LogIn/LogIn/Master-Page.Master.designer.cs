@@ -51,6 +51,33 @@ namespace LogIn
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl registroMozos;
 
         /// <summary>
+        /// Control registroRubros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registroRubros;
+
+        /// <summary>
+        /// Control registroArticulos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl registroArticulos;
+
+        /// <summary>
+        /// Control generarFactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl generarFactura;
+
+        /// <summary>
         /// Control lblBienvenido.
         /// </summary>
         /// <remarks>

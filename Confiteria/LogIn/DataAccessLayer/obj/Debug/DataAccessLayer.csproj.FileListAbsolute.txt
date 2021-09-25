@@ -7,3 +7,12 @@ C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileI
 C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Proyecyos\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Debug\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Debug\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

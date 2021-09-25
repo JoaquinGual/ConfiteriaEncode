@@ -1,0 +1,9 @@
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Release\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Release\Entities.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\bin\Release\Entities.pdb
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Release\DataAccessLayer.csprojAssemblyReference.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CopyComplete
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Release\DataAccessLayer.dll
+E:\GITHUB\ConfiteriaEncode\Confiteria\LogIn\DataAccessLayer\obj\Release\DataAccessLayer.pdb

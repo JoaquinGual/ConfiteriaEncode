@@ -74,6 +74,7 @@
     <Content Include="Lista.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Master-Page.Master" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Mozos.aspx" />
     <Content Include="Registro.aspx" />

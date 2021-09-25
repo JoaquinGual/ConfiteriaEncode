@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALArticulo.cs" />
+    <Compile Include="DALDetalle_Factura.cs" />
+    <Compile Include="DALFactura.cs" />
     <Compile Include="DALLocal.cs" />
     <Compile Include="DALMozo.cs" />
     <Compile Include="DALRubro.cs" />
