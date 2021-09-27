@@ -9,8 +9,61 @@ using System.Data;
 
 namespace DataAccessLayer
 {
-   public class DALDetalle_Factura
+    public class DALDetalle_Factura
     {
+        public static decimal calcularTotal(int id,bool flag)
+        {
+
+            decimal total = 0;
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "calcularTotal";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@id", id);
+
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector = oDatos.Comando.ExecuteReader();
+                if (flag == false)
+                {
+                    if (oDatos.Lector.Read())
+                    {
+                        if (oDatos.Lector["Total"] != null)
+                        {
+                            total = (decimal)oDatos.Lector["Total"];
+                        }
+
+                    }
+                }
+                
+                else
+                {
+                    total = 0;
+                    flag = false;
+                }
+
+                    
+
+                
+
+
+                oDatos.CommitTransaction();
+                return total;
+            }
+            catch (OleDbException e)
+            {
+                throw new Exception(e.Message);
+                //oDatos.BeginTransaction();
+                //return total;
+
+            }
+        }
         public static bool InsertarDetalle(Detalle_Factura df)
         {
             Datos oDatos = new Datos();
@@ -40,6 +93,35 @@ namespace DataAccessLayer
 
             }
 
+        }
+        public static OleDbDataReader detallePorId(int id)
+        {
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "detallePorId";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@idFactura", id);
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector = oDatos.Comando.ExecuteReader();
+                return oDatos.Lector;
+                //oDatos.CommitTransaction();
+
+
+            }
+            catch (Exception)
+            {
+                oDatos.BeginTransaction();
+                return oDatos.Lector;
+
+
+            }
         }
         public static bool EliminarDetalle(Detalle_Factura df)
         {

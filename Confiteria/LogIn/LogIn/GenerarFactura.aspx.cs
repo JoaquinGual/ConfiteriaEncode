@@ -15,6 +15,7 @@ namespace LogIn
         {
             if (!IsPostBack)
             {
+                ViewState["primerdetalle"] = true;
                 ViewState["primero"] = true;
                 generarDetalle.Visible = false;
                 dtpFechaEmision.SelectedDate = DateTime.Now;
@@ -63,13 +64,16 @@ namespace LogIn
         {
            
             int idFactura = BLLFactura.traerNumeroFactura();
-            List<Detalle_Factura> LDF = BLLDetalle_Factura.CargarListaDetalle("Detalle_Facturas").FindAll(u => u.pIdFactura == idFactura);
-            
-            HttpContext.Current.Session["Detalles"] = LDF;
-            
-            gvListaDetalle.DataSource = HttpContext.Current.Session["Detalles"];
+
+
+
+
+            gvListaDetalle.DataSource = BLLDetalle_Factura.detallePorId(idFactura);
             label.Text = idFactura.ToString();
             gvListaDetalle.DataBind();
+            string tot = BLLDetalle_Factura.calcularTotal(idFactura,bool.Parse(ViewState["primerdetalle"].ToString())).ToString();
+            lblTotal.Text = tot;
+            ViewState["primerdetalle"] = false;
 
 
         }
@@ -141,6 +145,7 @@ namespace LogIn
                 {
 
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "MInsertOk();", true);
+
                     CargarListaDetalle(lblIdFactura);
                     generarFactura.Visible = false;
                     generarDetalle.Visible = true;
@@ -157,7 +162,7 @@ namespace LogIn
         {
             if (bool.Parse(ViewState["primero"].ToString()) == false)
             {
-                gvListaDetalle.Rows[int.Parse(Session["index"].ToString())].Cells[4].Enabled = false;
+                gvListaDetalle.Rows[int.Parse(Session["index"].ToString())].Cells[5].Enabled = false;
             }
 
 
@@ -167,13 +172,13 @@ namespace LogIn
             var id = gvListaDetalle.SelectedRow.Cells[1].Text;
             Session["idDetalle"] = id;
             Session["index"] = index;
-            gvListaDetalle.SelectedRow.Cells[4].Enabled = true;
+            gvListaDetalle.SelectedRow.Cells[5].Enabled = true;
             ViewState["primero"] = false;
         }
 
         protected void gvListaDetalle_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Cells[4].Enabled = false;
+            e.Row.Cells[5].Enabled = false;
         }
 
 
@@ -191,6 +196,7 @@ namespace LogIn
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
+
             Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Finally();", true);
             generarFactura.Visible = true;
             generarDetalle.Visible = false;
