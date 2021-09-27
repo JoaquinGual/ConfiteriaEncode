@@ -11,6 +11,39 @@ namespace DataAccessLayer
 {
     public class DALFactura
     {
+
+        public static int traerNumeroFactura()
+        {
+            int id = 0;
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "traerNumeroFactura";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector =  oDatos.Comando.ExecuteReader();
+                if (oDatos.Lector.Read())
+                {
+                    id = oDatos.Lector.GetInt32(0);
+                }
+
+                oDatos.CommitTransaction();
+                return id;
+            }
+            catch (Exception)
+            {
+                oDatos.BeginTransaction();
+                return id;
+
+            }
+
+        }
         public static bool InsertarFactura(Factura f)
         {
             Datos oDatos = new Datos();
@@ -32,7 +65,7 @@ namespace DataAccessLayer
                 oDatos.CommitTransaction();
                 return true;
             }
-            catch (Exception)
+            catch (Exception) 
             {
                 oDatos.BeginTransaction();
                 return false;

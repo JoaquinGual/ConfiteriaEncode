@@ -20,7 +20,7 @@ namespace LogIn
                 dtpFechaEmision.SelectedDate = DateTime.Now;
                 CargarComboMozo(cmbMozo);
                 CargarComboArticulos(cmbArticulo);
-
+                
             }
 
         }
@@ -61,8 +61,8 @@ namespace LogIn
         }
         public void CargarListaDetalle(Label label)
         {
-            List<Factura> LF = BLLFactura.CargarListaFactura("Facturas");
-            int idFactura = LF.Count;
+           
+            int idFactura = BLLFactura.traerNumeroFactura();
             List<Detalle_Factura> LDF = BLLDetalle_Factura.CargarListaDetalle("Detalle_Facturas").FindAll(u => u.pIdFactura == idFactura);
             
             HttpContext.Current.Session["Detalles"] = LDF;
@@ -108,7 +108,7 @@ namespace LogIn
                 if (BLLFactura.InsertarFactura(f) == true)
                 {
 
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "MInsertOk();", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "FacOk();", true);
                     CargarListaDetalle(lblIdFactura);
                     generarFactura.Visible = false;
                     generarDetalle.Visible = true;
@@ -191,6 +191,7 @@ namespace LogIn
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Finally();", true);
             generarFactura.Visible = true;
             generarDetalle.Visible = false;
         }

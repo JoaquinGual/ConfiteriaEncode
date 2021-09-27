@@ -37,6 +37,7 @@ namespace LogIn
 
         public void CargarListaArticulos()
         {
+
             List<Articulo> LA = BLLArticulo.CargarListaArticulo("Articulos");
             HttpContext.Current.Session["Articulos"] = LA;
             gvListaDeArticulos.DataSource = HttpContext.Current.Session["Articulos"];

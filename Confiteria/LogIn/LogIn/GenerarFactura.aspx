@@ -14,7 +14,7 @@
                 <asp:UpdatePanel runat="server">
         <ContentTemplate>
                 <div class="d-flex justify-content-center">
-                    <asp:Calendar ID="dtpFechaEmision" runat="server"></asp:Calendar>
+                    <asp:Calendar ID="dtpFechaEmision" runat="server" SelectedDate=""></asp:Calendar>
                 </div>
                 </ContentTemplate>
     </asp:UpdatePanel>
@@ -110,6 +110,28 @@
         </div>
 
 
+    <script>
+        function MInsertOk() {
+            setTimeout(function () { swal("Articulo agregado Correctamente!"); }, 0);
 
+        }
+        function SelectBefore() {
+            setTimeout(function () { swal("Seleccione un Rubro!"); }, 0);
+
+        }
+        function FacOk() {
+            setTimeout(function () { swal("Factura creada correctamente!"); }, 0);
+
+        }
+
+        function DeleteOk() {
+            setTimeout(function () { swal("Articulo quitado correctamente!"); }, 0);
+
+        }
+        function Finally() {
+            setTimeout(function () { swal("Venta Finalizada!"); }, 0);
+
+        }
+    </script>
 
 </asp:Content>

@@ -19,6 +19,10 @@ namespace BusinessLogicLayer
         {
             return DALFactura.cargarListaFacturas(tabla);
         }
+        public static int traerNumeroFactura()
+        {
+            return DALFactura.traerNumeroFactura();
+        }
 
     }
 }
