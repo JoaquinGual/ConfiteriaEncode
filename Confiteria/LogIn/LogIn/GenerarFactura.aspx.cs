@@ -18,7 +18,7 @@ namespace LogIn
                 ViewState["primerdetalle"] = true;
                 ViewState["primero"] = true;
                 generarDetalle.Visible = false;
-                dtpFechaEmision.SelectedDate = DateTime.Now;
+                dtpFechaEmision.SelectedDate = DateTime.Today;
                 CargarComboMozo(cmbMozo);
                 CargarComboArticulos(cmbArticulo);
                 
