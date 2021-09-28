@@ -41,7 +41,7 @@
         </div>
         <div class="d-flex justify-content-end">
             <div class="d-flex justify-content-between">
-                <p>Numero de Factura:  </p>
+                <p>Numero de Factura: &nbsp;  </p>
                 <asp:Label ID="lblIdFactura" runat="server" Text=""></asp:Label>
             </div>
         </div>
@@ -71,9 +71,18 @@
                 <button type="button" class="btn btn-secondary">Cancelar</button>
                 <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
             </div>
-            <div class="d-flex justify-content-center">
-                <asp:Label Text="Total" runat="server" ID="lblTotal" />
-            </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <p>Total: &nbsp; </p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <asp:Label Text="Total" runat="server" ID="lblTotal" />
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
 
         <asp:UpdatePanel runat="server">

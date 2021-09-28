@@ -73,7 +73,8 @@ namespace LogIn
             gvListaDetalle.DataBind();
             string tot = BLLDetalle_Factura.calcularTotal(idFactura,bool.Parse(ViewState["primerdetalle"].ToString())).ToString();
             lblTotal.Text = tot;
-            ViewState["primerdetalle"] = false;
+            
+            
 
 
         }
@@ -114,6 +115,7 @@ namespace LogIn
 
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "FacOk();", true);
                     CargarListaDetalle(lblIdFactura);
+                    ViewState["primerdetalle"] = false;
                     generarFactura.Visible = false;
                     generarDetalle.Visible = true;
 
@@ -160,6 +162,8 @@ namespace LogIn
 
         protected void gvListaDetalle_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index = gvListaDetalle.SelectedIndex;
+            Session["index"] = index;
             if (bool.Parse(ViewState["primero"].ToString()) == false)
             {
                 gvListaDetalle.Rows[int.Parse(Session["index"].ToString())].Cells[5].Enabled = false;
@@ -168,10 +172,10 @@ namespace LogIn
 
 
 
-            int index = gvListaDetalle.SelectedIndex;
+            
             var id = gvListaDetalle.SelectedRow.Cells[1].Text;
             Session["idDetalle"] = id;
-            Session["index"] = index;
+            
             gvListaDetalle.SelectedRow.Cells[5].Enabled = true;
             ViewState["primero"] = false;
         }
@@ -191,6 +195,7 @@ namespace LogIn
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "DeleteOk();", true);
                 CargarListaDetalle(lblIdFactura);
+               
             }
         }
 
