@@ -11,6 +11,75 @@ namespace DataAccessLayer
 {
     public class DALDetalle_Factura
     {
+        public static OleDbDataReader VentasPorDia(DateTime fecha)
+        {
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "ventasPorDia";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@fecha", fecha);
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector = oDatos.Comando.ExecuteReader();
+                return oDatos.Lector;
+                //oDatos.CommitTransaction();
+
+
+            }
+            catch (Exception)
+            {
+                oDatos.BeginTransaction();
+                return oDatos.Lector;
+
+
+            }
+        }
+        public static decimal totalPorDia(DateTime fecha)
+        {
+
+            decimal total = 0;
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "totalPorDia";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@fecha", fecha);
+
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector = oDatos.Comando.ExecuteReader();
+                
+                    if (oDatos.Lector.Read())
+                    {
+                        if (oDatos.Lector["Total"] != null)
+                        {
+                            total = (decimal)oDatos.Lector["Total"];
+                        }
+
+                    }
+ 
+                oDatos.CommitTransaction();
+                return total;
+            }
+            catch (OleDbException e)
+            {
+                throw new Exception(e.Message);
+                //oDatos.BeginTransaction();
+                //return total;
+
+            }
+        }
         public static decimal calcularTotal(int id,bool flag)
         {
 

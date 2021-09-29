@@ -80,6 +80,7 @@
     <Content Include="Registro.aspx" />
     <Content Include="RegistroArticulos.aspx" />
     <Content Include="RegistroRubros.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="RegistroRubros.aspx.designer.cs">
       <DependentUpon>RegistroRubros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

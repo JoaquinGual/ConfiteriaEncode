@@ -19,7 +19,7 @@
 <body>
 
    
-    <div class="wrapper d-flex align-items-stretch">
+    <div class="wrapper d-flex align-items-stretch" id="masterBody">
 
         <nav id="sidebar" class="active">
             <div class="custom-menu">
