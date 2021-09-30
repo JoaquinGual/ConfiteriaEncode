@@ -28,8 +28,7 @@
 
 
     <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Rubro" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
+        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Rubro" CssClass="btn btn-success" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
     </div>
 
 
@@ -135,25 +134,29 @@
 
 
     <script>
+        function Rubro() {
+            setTimeout(function () { swal("Ingrese Nombre de Rubro!"); }, 0);
+
+        }
         function MInsertOk() {
-            setTimeout(function () { swal("Rubro Registrado Correctamente!"); }, 1000);
+            setTimeout(function () { swal("Rubro Registrado Correctamente!"); }, 0);
 
         }
         function SelectBefore() {
-            setTimeout(function () { swal("Seleccione un Rubro!"); }, 500);
+            setTimeout(function () { swal("Seleccione un Rubro!"); }, 0);
 
         }
         function NotActive() {
-            setTimeout(function () { swal("Este Rubro ya no se encuentra activo!"); }, 500);
+            setTimeout(function () { swal("Este Rubro ya no se encuentra activo!"); }, 0);
 
         }
 
         function BajaOk() {
-            setTimeout(function () { swal("Rubro dado de baja correctamente!"); }, 500);
+            setTimeout(function () { swal("Rubro dado de baja correctamente!"); }, 0);
 
         }
         function MUpdateOk() {
-            setTimeout(function () { swal("Rubro Actualizado Correctamente!"); }, 500);
+            setTimeout(function () { swal("Rubro Actualizado Correctamente!"); }, 0);
 
         }
 

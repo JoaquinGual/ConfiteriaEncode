@@ -11,6 +11,35 @@ namespace DataAccessLayer
 {
     public class DALDetalle_Factura
     {
+        public static OleDbDataReader VentasPorMozo(DateTime fecha)
+        {
+            Datos oDatos = new Datos();
+            try
+            {
+
+
+                string proc = "ventasXMXD";
+                oDatos.Conectar();
+                oDatos.Comando.CommandType = CommandType.StoredProcedure;
+                oDatos.Comando.CommandText = proc;
+                oDatos.Comando.Parameters.Clear();
+                oDatos.Comando.Parameters.AddWithValue("@fecha", fecha);
+                oDatos.transaction = oDatos.conexion.BeginTransaction();
+                oDatos.Comando.Transaction = oDatos.transaction;
+                oDatos.Lector = oDatos.Comando.ExecuteReader();
+                return oDatos.Lector;
+                //oDatos.CommitTransaction();
+
+
+            }
+            catch (Exception)
+            {
+                oDatos.BeginTransaction();
+                return oDatos.Lector;
+
+
+            }
+        }
         public static OleDbDataReader VentasPorDia(DateTime fecha)
         {
             Datos oDatos = new Datos();

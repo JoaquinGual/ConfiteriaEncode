@@ -50,17 +50,37 @@ namespace LogIn
             if (cmbRubro.SelectedIndex == -1)
             {
 
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Rubro();", true);
                 return false;
             }
             if (txtDescripcion.Text == "")
             {
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Descripcion();", true);
                 return false;
             }
             if (txtPrecio.Text == "")
             {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Precio();", true);
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarDatosModal()
+        {
+            if (cmbRubroArticuloM.SelectedIndex == -1)
+            {
 
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "Rubro();", true);
+                return false;
+            }
+            if (txtDescripcionArticuloM.Text == "")
+            {
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "Descripcion();", true);
+                return false;
+            }
+            if (txtPrecioArticuloM.Text == "")
+            {
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "Precio();", true);
                 return false;
             }
             return true;
@@ -158,23 +178,27 @@ namespace LogIn
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Entities.Articulo a = new Entities.Articulo();
-            a.pIdArticulo = int.Parse(ViewState["idArticuloEdit"].ToString());
-            a.pDescripcion = txtDescripcionArticuloM.Text;
-            a.pPrecio = decimal.Parse(txtPrecioArticuloM.Text);
-            a.pIdRubro = int.Parse(cmbRubro.SelectedValue);
-            a.pActivo = chkActivoArticuloM.Checked;
 
-            if (BLLArticulo.ActualizarArticulo(a) == true)
+            if (ValidarDatosModal())
             {
+                Entities.Articulo a = new Entities.Articulo();
+                a.pIdArticulo = int.Parse(ViewState["idArticuloEdit"].ToString());
+                a.pDescripcion = txtDescripcionArticuloM.Text;
+                a.pPrecio = decimal.Parse(txtPrecioArticuloM.Text);
+                a.pIdRubro = int.Parse(cmbRubro.SelectedValue);
+                a.pActivo = chkActivoArticuloM.Checked;
+                if (BLLArticulo.ActualizarArticulo(a) == true)
+                {
 
-                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "MUpdateOk();", true);
-                CargarListaArticulos();
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "sweetAlert", "MUpdateOk();", true);
+                    CargarListaArticulos();
+                }
+                else
+                {
+                    Response.Write("<script>alert('incorrecto')</script>");
+                }
             }
-            else
-            {
-                Response.Write("<script>alert('inCorrecto')</script>");
-            }
+            
         }
 
 
@@ -198,7 +222,7 @@ namespace LogIn
                 }
                 else
                 {
-                    Response.Write("<script>alert('inCorrecto')</script>");
+                    Response.Write("<script>alert('incorrecto')</script>");
                 }
             }
         }

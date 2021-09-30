@@ -52,7 +52,7 @@
                         <asp:Label ID="lblCantidad" runat="server" Text="Cantidad"></asp:Label>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
                     </div>
 
                 </div>
@@ -68,8 +68,7 @@
 
         <div>
             <div class="modal-footer d-flex flex-row-reverse justify-content-center">
-                <button type="button" class="btn btn-secondary">Cancelar</button>
-                <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
+                <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn btn-success" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
             </div>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
@@ -121,8 +120,7 @@
         </asp:UpdatePanel>
 
         <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar Venta" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnFinalizar_Click" />
+            <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar Venta" CssClass="btn btn-danger" UseSubmitBehavior="False" OnClick="btnFinalizar_Click" />
         </div>
     </div>
 
@@ -150,5 +148,27 @@
 
         }
     </script>
+      <script>
+          function solonmeros(e) {
+
+              var key;
+
+              if (window.event) // IE
+              {
+                  key = e.keyCode;
+              }
+              else if (e.which) // Netscape/Firefox/Opera
+              {
+                  key = e.which;
+              }
+
+              if (key < 48 || key > 57) {
+                  return false;
+              }
+
+              return true;
+          }
+
+      </script>
 
 </asp:Content>

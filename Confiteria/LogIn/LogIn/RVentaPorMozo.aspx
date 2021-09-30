@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Page.Master" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="LogIn.Reportes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-Page.Master" AutoEventWireup="true" CodeBehind="RVentaPorMozo.aspx.cs" Inherits="LogIn.RVentaPorMozo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <asp:ScriptManager runat="server" />
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
@@ -20,7 +21,7 @@
 
             <div class="modal-footer d-flex flex-row-reverse justify-content-center">
 
-                <asp:Button ID="btnVentasPorDia" runat="server" Text="Ver Ventas en Fecha" CssClass="btn btn-light" UseSubmitBehavior="False" OnClick="btnVentasPorDia_Click" />
+                <asp:Button ID="btnVentasPorMozo" runat="server" Text="Ver Ventas Por Mozo" CssClass="btn btn-light" UseSubmitBehavior="False" OnClick="btnVentasPorMozo_Click" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
@@ -29,7 +30,7 @@
             <ContentTemplate>
                 <div class="d-flex justify-content-center">
 
-                    <h3>Informe de ventas del Dia: </h3>
+                    <h3>Informe de ventas por Mozo del Dia: </h3>
                 </div>
                 <div class="d-flex justify-content-center">
 
@@ -47,10 +48,11 @@
 
                         <Columns>
 
-                            <asp:BoundField DataField="Articulo" HeaderText="ID" />
-                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
-                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
-                            <asp:BoundField DataField="Importe" HeaderText="Importe" />
+                            <asp:BoundField DataField="Mozo" HeaderText="Mozo" />
+                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad Articulos" />
+                            <asp:BoundField DataField="Total" HeaderText="Total" />
+                            <asp:BoundField DataField="Comision" HeaderText="Comision" />
+                            <asp:BoundField DataField="Pago" HeaderText="A Pagar" />
 
                         </Columns>
 
@@ -75,7 +77,7 @@
                         <asp:Label Text="Total:" ID="lblTotal" CssClass="h3" runat="server" />
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:Label Text="asd" ID="lblTotalPorDia" CssClass="h3" runat="server" />
+                        <asp:Label Text="asd" ID="lblTotPagar" CssClass="h3" runat="server" />
                     </div>
                 </div>
             </ContentTemplate>
@@ -100,7 +102,7 @@
             master.remove();
             window.print();
 
-            window.location.href = "/Reportes.aspx"
+            window.location.href = "/RVentaPorMozo.aspx"
             // Clean up print section for future use
             var oldElem = document.getElementById("printSection");
             if (oldElem != null) { oldElem.parentNode.removeChild(oldElem); }
@@ -110,4 +112,5 @@
             return true;
         }
     </script>
+
 </asp:Content>

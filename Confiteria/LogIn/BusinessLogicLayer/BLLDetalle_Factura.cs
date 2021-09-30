@@ -24,6 +24,10 @@ namespace BusinessLogicLayer
         {
             return DALDetalle_Factura.VentasPorDia(fecha);
         }
+        public static OleDbDataReader ventasPorMozo(DateTime fecha)
+        {
+            return DALDetalle_Factura.VentasPorMozo(fecha);
+        }
         public static bool EliminarDetalle(Detalle_Factura df)
         {
             return DALDetalle_Factura.EliminarDetalle(df);

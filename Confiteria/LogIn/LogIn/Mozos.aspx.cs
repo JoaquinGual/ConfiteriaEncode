@@ -97,22 +97,22 @@ namespace LogIn
             if (cmbLocal.SelectedIndex == -1)
             {
 
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Combo();", true);
                 return false;
             }
             if (txtNombreMozo.Text == "")
             {
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Nombre();", true);
                 return false;
             }
             if (txtApellidoMozo.Text == "")
             {
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Apellido();", true);
                 return false;
             }
             if (txtComision.Text == "")
             {
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Comision();", true);
                 return false;
             }
             return true;
