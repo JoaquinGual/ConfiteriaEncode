@@ -17,6 +17,8 @@ namespace LogIn
                 dtpFecha.SelectedDate = DateTime.Today;
                 lblTotal.Visible = false;
                 lblTotalPorDia.Visible = false;
+                lblInforme.Visible = false;
+                btnDescargar.Visible = false;
             }
             
             
@@ -31,6 +33,8 @@ namespace LogIn
             lblTotalPorDia.Text = BLLDetalle_Factura.totalPorDia(dtpFecha.SelectedDate).ToString();
             lblTotalPorDia.Visible = true;
             lblTotal.Visible = true;
+            lblInforme.Visible = true;
+            btnDescargar.Visible = true;
             
         }
     }

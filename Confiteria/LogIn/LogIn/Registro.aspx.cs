@@ -53,8 +53,15 @@ namespace LogIn
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Mail();", true);
                 return false;
             }
+            if (lblError.Value == "Mail Invalido!")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "MailErroneo();", true);
+                return false;
+            }
+
 
             return true;
+
         }
         protected void btnRegistro_Click(object sender, EventArgs e)
         {

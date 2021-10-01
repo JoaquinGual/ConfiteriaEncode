@@ -41,8 +41,8 @@
         </div>
         <div class="d-flex justify-content-end">
             <div class="d-flex justify-content-between">
-                <p>Numero de Factura: &nbsp;  </p>
-                <asp:Label ID="lblIdFactura" runat="server" Text=""></asp:Label>
+                <p class="parrafo">Numero de Factura: &nbsp;  </p>
+                <asp:Label ID="lblIdFactura" runat="server" Text="" CssClass="parrafo"></asp:Label>
             </div>
         </div>
         <div class="d-flex flex-column-reverse">
@@ -74,10 +74,10 @@
                 <ContentTemplate>
                     <div class="d-flex justify-content-center">
                         <div>
-                            <p>Total: &nbsp; </p>
+                            <p class="parrafo">Total: &nbsp; </p>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <asp:Label Text="Total" runat="server" ID="lblTotal" />
+                            <asp:Label Text="Total" runat="server" CssClass="parrafo" ID="lblTotal" />
                         </div>
                     </div>
                 </ContentTemplate>
@@ -107,7 +107,7 @@
 
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#4c5459" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#602a06" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EFF3FB" />
                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />

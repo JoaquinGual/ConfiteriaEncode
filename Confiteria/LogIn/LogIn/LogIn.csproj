@@ -81,6 +81,7 @@
     <Content Include="RegistroArticulos.aspx" />
     <Content Include="RegistroRubros.aspx" />
     <Content Include="Resources\editarimg.png" />
+    <Content Include="Resources\Fonto.jpg" />
     <Content Include="RVentaPorMozo.aspx" />
     <Content Include="RVentaTotalPorDia.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />

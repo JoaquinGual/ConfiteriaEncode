@@ -42,6 +42,15 @@ namespace LogIn
         protected global::System.Web.UI.WebControls.Button btnVentasPorDia;
 
         /// <summary>
+        /// Control lblInforme.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInforme;
+
+        /// <summary>
         /// Control lblFecha1.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,14 @@ namespace LogIn
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalPorDia;
+
+        /// <summary>
+        /// Control btnDescargar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDescargar;
     }
 }

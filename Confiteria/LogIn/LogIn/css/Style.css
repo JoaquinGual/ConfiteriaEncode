@@ -68,7 +68,7 @@ body {
     position: absolute;
     height: 45px;
     width: 100%;
-    background: #565f65;
+    background: #602a06;
     z-index: -1;
 }
 }
@@ -11500,7 +11500,7 @@ h1, h2, h3, h4, h5,
 #sidebar {
     min-width: 270px;
     max-width: 270px;
-    background: #565f65;
+    background: #602a06;
     color: #fff;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -11698,13 +11698,19 @@ a[data-toggle="collapse"] {
 
 .bienvenido {
     font-size: 23px;
-    color: #3c93c9;
-    font-style:normal;
-    font-weight:bold;
+    color: #ffff;
+    font-style: normal;
+    font-weight: bold;
 }
 .titulo {
     font-size: 33px;
-    color: #3c93c9;
+    color: #d36b26;
+    font-style: normal;
+    font-weight: bold;
+}
+.parrafo {
+    font-size: 20px;
+    color: #d36b26;
     font-style: normal;
     font-weight: bold;
 }

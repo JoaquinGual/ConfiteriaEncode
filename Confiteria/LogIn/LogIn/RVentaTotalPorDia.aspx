@@ -29,11 +29,11 @@
             <ContentTemplate>
                 <div class="d-flex justify-content-center">
 
-                    <h3>Informe de ventas del Dia: </h3>
+                    <asp:Label Text="Informe de ventas del Dia: " CssClass="parrafo" ID="lblInforme" runat="server" />
                 </div>
                 <div class="d-flex justify-content-center">
 
-                    <asp:Label Text="" ID="lblFecha1" runat="server" CssClass="h5" />
+                    <asp:Label Text="" ID="lblFecha1" runat="server" CssClass="parrafo" />
                 </div>
 
             </ContentTemplate>
@@ -56,7 +56,7 @@
 
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#4c5459" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#602a06" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#EFF3FB" />
                         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -72,21 +72,24 @@
             <ContentTemplate>
                 <div>
                     <div class="d-flex justify-content-center">
-                        <asp:Label Text="Total:" ID="lblTotal" CssClass="h3" runat="server" />
+                        <asp:Label Text="Total:" ID="lblTotal" CssClass="parrafo" runat="server" />
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:Label Text="asd" ID="lblTotalPorDia" CssClass="h3" runat="server" />
+                        <asp:Label Text="asd" ID="lblTotalPorDia" CssClass="parrafo" runat="server" />
                     </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate>
+            <div class="modal-footer d-flex flex-row-reverse justify-content-center">
+                <asp:Button Text="Descargar" class="btn btn-dark" OnClientClick="printDiv('printear')" ID="btnDescargar" runat="server" />
 
-    <div class="modal-footer d-flex flex-row-reverse justify-content-center">
-        <button class="btn btn-dark" onclick="printDiv('printear')">Descargar</button>
-        <%--<asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="printDiv('ventasPorDiaPrint')" />--%>
-    </div>
-
+                <%--<asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="printDiv('ventasPorDiaPrint')" />--%>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <script>
         function printDiv(div) {
             // Create and insert new print section

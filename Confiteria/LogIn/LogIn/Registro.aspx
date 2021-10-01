@@ -46,7 +46,8 @@
         <div class="form-group col-md-4">
             <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control" name="email" onkeyup="ValidateEmail();"></asp:TextBox>
-            <span id="lblError" style="color: red"></span>
+            <span id="lblMensaje"></span>
+            <asp:HiddenField  runat="server" ID="lblError"/>
         </div>
     </div>
     <div class="form-row d-flex justify-content-center">
@@ -56,9 +57,9 @@
         </div>
     </div>
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <asp:Button ID="btnRegistro" runat="server" Text="Registrarme!" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
+    <div class="modal-footer d-flex justify-content-center">
+
+        <asp:Button ID="btnRegistro" runat="server" Text="Registrarme!" CssClass="btn btn-danger" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
     </div>
     <script>
         function InsertOk() {
@@ -81,6 +82,10 @@
             setTimeout(function () { swal("Ingrese Mail!"); }, 0);
 
         }
+        function MailErroneo() {
+            setTimeout(function () { swal("Ingrese Mail Valido!"); }, 0);
+
+        }
         function Usuario() {
             setTimeout(function () { swal("Ingrese Usuario!"); }, 0);
 
@@ -94,12 +99,27 @@
 
      <script>
          function ValidateEmail() {
-             var email = document.getElementById("ContentPlaceHolder1_txtEmail").value;
-             var lblError = document.getElementById("lblError");
+             var email = document.getElementById("<%=txtEmail.ClientID%>").value;
+             var mensaje = document.getElementById("lblMensaje");
+             
+             
+             var lblError = document.getElementById("<%=lblError.ClientID%>");
              lblError.innerHTML = "";
+             mensaje.innerHTML = "";
+
+            
              var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
              if (!expr.test(email)) {
-                 lblError.innerHTML = "Invalid email address.";
+
+                 mensaje.innerHTML = "Mail Invalido!";
+                 mensaje.style.color = "red";
+                 lblError.value = "Mail Invalido!";
+             }
+             else
+             {
+                 mensaje.style.color = "green";
+                 mensaje.innerHTML = "Mail Valido!";
+                 lblError.value = "Mail Valido!";
              }
          }
 
