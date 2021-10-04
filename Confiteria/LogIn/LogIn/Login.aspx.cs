@@ -32,7 +32,7 @@ namespace LogIn
                tipoUser = u.pTipoUser;
                 Session["tipouser"] = tipoUser;
                 Session["nombreuser"] = txtUsuario.Text;
-                Response.Redirect("Index.aspx?");
+                Response.Redirect("Default.aspx?");
                 
 
             }

@@ -52,7 +52,8 @@
                         <asp:Label ID="lblCantidad" runat="server" Text="Cantidad"></asp:Label>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtCantidad', 9, 'lblMensajeCant')"></asp:TextBox>
+                        <span id="lblMensajeCant"></span>
                     </div>
 
                 </div>
@@ -146,6 +147,26 @@
         function Finally() {
             setTimeout(function () { swal("Venta Finalizada!"); }, 0);
 
+        }
+    </script>
+    <script>    
+        function cantidadCaracteres(elem, cantidad, lblMensaje) {
+            let max = cantidad;
+            input = document.getElementById(elem).value.length;
+            boton = document.getElementById("<%=btnArticulo.ClientID%>");
+            boton2 = document.getElementById("<%=btnFinalizar.ClientID%>");
+            mensaje = document.getElementById(lblMensaje);
+            if (input > max) {
+                boton.disabled = true;
+                boton2.disabled = true;
+                mensaje.innerHTML = "Demasiado Largo!";
+                mensaje.style.color = "red";
+            }
+            else {
+                boton.disabled = false;
+                mensaje.innerHTML = "";
+                boton2.disabled = false;
+            }
         }
     </script>
       <script>

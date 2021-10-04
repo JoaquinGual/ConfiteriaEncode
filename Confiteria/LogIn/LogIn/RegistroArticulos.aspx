@@ -27,8 +27,9 @@
             <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-control" name="descripcion"></asp:TextBox>
         </div>
         <div class="form-group col-md-4">
-            <asp:Label ID="lblPrecio" runat="server" Text="Precio"></asp:Label>
-            <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
+            <asp:Label ID="lblPrecio" runat="server" Text="Precio"></asp:Label> 
+            <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtPrecio', 8, 'lblPrecioMensaje')" ></asp:TextBox>
+            <span id="lblPrecioMensaje"></span>
         </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -103,7 +104,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <asp:Label ID="lblPrecioArticuloM" runat="server" Text="Precio del Articulo"></asp:Label>
-                                <asp:TextBox ID="txtPrecioArticuloM" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" ></asp:TextBox>
+                                <asp:TextBox ID="txtPrecioArticuloM" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtPrecioArticuloM', 8, 'mensajePrecio')" ></asp:TextBox>
+                                <span id="mensajePrecio"></span>
                             </div>
                         </div>
                         <div class="form-row d-flex justify-content-center">
@@ -132,6 +134,26 @@
             </div>
         </div>
     </div>
+     <script>    
+         function cantidadCaracteres(elem, cantidad, lblMensaje) {
+             let max = cantidad;
+             input = document.getElementById(elem).value.length;
+             boton = document.getElementById("<%=btnRegistro.ClientID%>");
+            boton2 = document.getElementById("<%=btnGuardar.ClientID%>");
+             mensaje = document.getElementById(lblMensaje);
+             if (input > max) {
+                 boton.disabled = true;
+                 boton2.disabled = true;
+                 mensaje.innerHTML = "Demasiado Largo!";
+                 mensaje.style.color = "red";
+             }
+             else {
+                 boton.disabled = false;
+                 mensaje.innerHTML = "";
+                 boton2.disabled = false;
+             }
+         }
+     </script>
   
     <script>
         function solonmeros(e) {

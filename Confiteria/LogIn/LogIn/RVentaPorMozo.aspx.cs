@@ -17,7 +17,8 @@ namespace LogIn
                 dtpFecha.SelectedDate = DateTime.Today;
                 lblTotal.Visible = false;
                 lblTotPagar.Visible = false;
-                
+                btnDescargar.Visible = false;
+                lblVentasPorMozo.Visible = false;
             }
         }
 
@@ -31,6 +32,9 @@ namespace LogIn
             lblTotPagar.Text = Convert.ToString(TotPagar);
             lblTotPagar.Visible = true;
             lblTotal.Visible = true;
+            btnDescargar.Visible = true;
+            lblVentasPorMozo.Visible = true;
+
         }
     }
 }

@@ -4,6 +4,12 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@font-face {
+    font-family: 'Futura Now Headline Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura Now Headline Regular'), url(../resources/Fonts/FuturaNowHeadlineBold.woff) format('woff');
+}
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -11406,7 +11412,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
-    font-family: "Poppins", Arial, sans-serif;
+
     font-size: 14px;
     line-height: 1.8;
     font-weight: normal;
@@ -11714,6 +11720,14 @@ a[data-toggle="collapse"] {
     font-style: normal;
     font-weight: bold;
 }
-
+.defaultLogo{
+    width:50vw;
+}
+.sales {
+    font-family: 'Futura Now Headline Regular';
+    font-size: 4vw;
+    color: #fefefe;
+    text-shadow:5px 8px 15px  #8B7465;
+}
 
 

@@ -30,11 +30,11 @@
             <ContentTemplate>
                 <div class="d-flex justify-content-center">
 
-                    <h3>Informe de ventas por Mozo del Dia: </h3>
+                    <asp:Label Text="Informe de ventas por Mozo del Dia:" runat="server" CssClass="parrafo" ID="lblVentasPorMozo" />
                 </div>
                 <div class="d-flex justify-content-center">
 
-                    <asp:Label Text="" ID="lblFecha1" runat="server" CssClass="h5" />
+                    <asp:Label Text="" ID="lblFecha1" runat="server" CssClass="parrafo" />
                 </div>
 
             </ContentTemplate>
@@ -74,20 +74,26 @@
             <ContentTemplate>
                 <div>
                     <div class="d-flex justify-content-center">
-                        <asp:Label Text="Total:" ID="lblTotal" CssClass="h3" runat="server" />
+                        <asp:Label Text="Total:" ID="lblTotal" CssClass="parrafo" runat="server" />
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:Label Text="asd" ID="lblTotPagar" CssClass="h3" runat="server" />
+                        <asp:Label Text="asd" ID="lblTotPagar" CssClass="parrafo" runat="server" />
                     </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
 
-    <div class="modal-footer d-flex flex-row-reverse justify-content-center">
-        <button class="btn btn-dark" onclick="printDiv('printear')">Descargar</button>
-        <%--<asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="printDiv('ventasPorDiaPrint')" />--%>
-    </div>
+    
+ <asp:UpdatePanel runat="server">
+        <ContentTemplate>
+            <div class="modal-footer d-flex flex-row-reverse justify-content-center">
+                <asp:Button Text="Descargar" class="btn btn-dark" OnClientClick="printDiv('printear')" ID="btnDescargar" runat="server" />
+
+                <%--<asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="printDiv('ventasPorDiaPrint')" />--%>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
     <script>
         function printDiv(div) {

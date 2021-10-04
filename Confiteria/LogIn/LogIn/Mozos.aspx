@@ -39,8 +39,9 @@
     <div class="form-row d-flex justify-content-center mt-2">
         <div class="form-group col-md-4">
             <asp:Label ID="lblComision" runat="server" Text="Comision del Mozo"></asp:Label>
-            <asp:TextBox ID="txtComision" runat="server" placeholder="Comision del Mozo" CssClass="form-control" name="user" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
-        </div>
+            <asp:TextBox ID="txtComision" runat="server" placeholder="Comision del Mozo" CssClass="form-control" name="user" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"  onkeyup=" cantidadCaracteres('ContentPlaceHolder1_txtComision', 2, 'mensajeComision')"></asp:TextBox>
+            <span id="mensajeComision"></span>
+            </div>
     </div>
     <div class="d-flex justify-content-center">
         <div class="form-group col-md-12 d-flex justify-content-sm-center">
@@ -121,8 +122,9 @@
                         <div class="form-row d-flex justify-content-center">
                             <div class="form-group col-md-4">
                                 <asp:Label ID="lblComisionMozo" runat="server" Text="Comision"></asp:Label>
-                                <asp:TextBox ID="txtComisionMozoM" runat="server" placeholder="Comision" CssClass="form-control" name="comision" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
-                            </div>
+                                <asp:TextBox ID="txtComisionMozoM" runat="server" placeholder="Comision" CssClass="form-control" name="comision" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup=" cantidadCaracteres('ContentPlaceHolder1_txtComisionMozoM', 2, 'lblComisionMensaje')"></asp:TextBox>
+                                <span id="lblComisionMensaje"></span>
+                                </div>
 
                             <div class="form-group col-md-4 ml-1">
                                 <asp:Label ID="lblSucursalMozo" runat="server" Text="Sucursal"></asp:Label>
@@ -148,6 +150,26 @@
             </div>
         </div>
     </div>
+    <script>    
+        function cantidadCaracteres(elem, cantidad, lblMensaje) {
+            let max = cantidad;
+            input = document.getElementById(elem).value.length;
+            boton = document.getElementById("<%=btnRegistro.ClientID%>");
+            boton2 = document.getElementById("<%=btnGuardar.ClientID%>");
+            mensaje = document.getElementById(lblMensaje);
+            if (input > max) {
+                boton.disabled = true;
+                boton2.disabled = true;
+                mensaje.innerHTML = "Demasiado Largo!";
+                mensaje.style.color = "red";
+            }
+            else {
+                boton.disabled = false;
+                mensaje.innerHTML = "";
+                boton2.disabled = false;
+            }
+        }
+    </script>
   
     <script>
         function solonmeros(e) {

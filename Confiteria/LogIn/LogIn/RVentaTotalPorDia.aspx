@@ -90,7 +90,9 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+   
     <script>
+         
         function printDiv(div) {
             // Create and insert new print section
             var elem = document.getElementById(div);

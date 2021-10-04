@@ -29,7 +29,7 @@
                 </button>
             </div>
             <div class="p-4">
-                <a href="Index.aspx">
+                <a href="Default.aspx">
 
                     <img class="logo" src="https://i.ibb.co/hWZ1gft/pngwing-com.png" alt="Alternate Text" /></a>
                 <ul class="list-unstyled components mb-5">
@@ -38,26 +38,26 @@
                         <a href="/Registro.aspx"><span class="fa fa-user mr-3"></span>Registro de Usuarios</a>
                     </li>
                     <li class="mt-3" id="listaUsuarios" runat="server">
-                        <a href="/Lista.aspx"><span class="fa fa-briefcase mr-3"></span>Lista de Usuarios</a>
+                        <a href="/Lista.aspx"><span class="fa fa-list mr-3"></span>Lista de Usuarios</a>
                     </li>
                     <li class="mt-3" id="registroMozos" runat="server">
-                        <a href="/Mozos.aspx"><span class="fa fa-sticky-note mr-3"></span>Registro de Mozos
+                        <a href="/Mozos.aspx"><span class="fa fa-user-plus mr-3"></span>Registro de Mozos
                         </a>
                     </li>
                      <li class="mt-3" id="registroRubros" runat="server">
-                        <a href="/RegistroRubros.aspx"><span class="fa fa-paper-plane mr-3"></span>Registro de Rubros</a>
+                        <a href="/RegistroRubros.aspx"><span class="fa fa-sitemap mr-3"></span>Registro de Rubros</a>
                     </li>
                     <li class="mt-3" id="registroArticulos" runat="server">
-                        <a href="/RegistroArticulos.aspx"><span class="fa fa-paper-plane mr-3"></span>Registro de Articulos</a>
+                        <a href="/RegistroArticulos.aspx"><span class="fa fa-coffee mr-3"></span>Registro de Articulos</a>
                     </li>
                     <li class="mt-3" id="generarFactura" runat ="server">
-                        <a href="/GenerarFactura.aspx"><span class="fa fa-paper-plane mr-3"></span>Generar Venta</a>
+                        <a href="/GenerarFactura.aspx"><span class="fa fa-usd mr-3"></span>Generar Venta</a>
                     </li>
                      <li class="mt-3" id="Li1" runat="server">
-                        <a href="/RVentaTotalPorDia.aspx"><span class="fa fa-paper-plane mr-3"></span>Ventas Por Dia</a>
+                        <a href="/RVentaTotalPorDia.aspx"><span class="fa fa-sun-o mr-3"></span>Ventas Por Dia</a>
                     </li>
                     <li class="mt-3" id="Li2" runat="server">
-                        <a href="/RVentaPorMozo.aspx"><span class="fa fa-paper-plane mr-3"></span>Ventas Por Mozo</a>
+                        <a href="/RVentaPorMozo.aspx"><span class="fa fa-users mr-3"></span>Ventas Por Mozo</a>
                     </li>
                     <li class="mt-3">
                         

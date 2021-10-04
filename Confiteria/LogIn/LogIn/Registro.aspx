@@ -18,7 +18,8 @@
         </div>
         <div class="form-group col-md-4 ml-1">
             <asp:Label ID="lblNumeroDoc" runat="server" Text="Nro Documento"></asp:Label>
-            <asp:TextBox ID="txtNumeroDoc" runat="server" name="doc" placeholder="Numero Doc" CssClass="form-control" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"></asp:TextBox>
+            <asp:TextBox ID="txtNumeroDoc" runat="server" name="doc" placeholder="Numero Doc" CssClass="form-control" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtNumeroDoc', 9,'lblDocumento')"></asp:TextBox>
+            <span id="lblDocumento"></span>
         </div>
     </div>
 
@@ -143,5 +144,22 @@
              return true;
          }
 
+     </script>
+     <script>
+         function cantidadCaracteres(elem, cantidad,lblMensaje) {
+             let max = cantidad;
+             input = document.getElementById(elem).value.length;
+             boton = document.getElementById("<%=btnRegistro.ClientID%>");
+             mensaje = document.getElementById(lblMensaje);
+             if (input > max) {
+                 boton.disabled = true;
+                 mensaje.innerHTML = "Demasiado Largo!";
+                 mensaje.style.color = "red";
+             }
+             else {
+                 boton.disabled = false;
+                 mensaje.innerHTML = "";
+             }
+         }
      </script>
 </asp:Content>
