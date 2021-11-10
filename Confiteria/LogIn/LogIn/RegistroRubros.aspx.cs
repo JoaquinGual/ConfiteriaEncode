@@ -36,7 +36,7 @@ namespace LogIn
            
             if (txtNombreRubro.Text == "")
             {
-
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "MyFunction", "Rubro();", true);
                 return false;
             }            
             return true;

@@ -41,8 +41,8 @@
         </div>
         <div class="d-flex justify-content-end">
             <div class="d-flex justify-content-between">
-                <p>Numero de Factura: &nbsp;  </p>
-                <asp:Label ID="lblIdFactura" runat="server" Text=""></asp:Label>
+                <p class="parrafo">Numero de Factura: &nbsp;  </p>
+                <asp:Label ID="lblIdFactura" runat="server" Text="" CssClass="parrafo"></asp:Label>
             </div>
         </div>
         <div class="d-flex flex-column-reverse">
@@ -52,7 +52,8 @@
                         <asp:Label ID="lblCantidad" runat="server" Text="Cantidad"></asp:Label>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad"></asp:TextBox>
+                        <asp:TextBox ID="txtCantidad" runat="server" placeholder="Cantidad" CssClass="form-control" name="cantidad" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtCantidad', 9, 'lblMensajeCant')"></asp:TextBox>
+                        <span id="lblMensajeCant"></span>
                     </div>
 
                 </div>
@@ -68,17 +69,16 @@
 
         <div>
             <div class="modal-footer d-flex flex-row-reverse justify-content-center">
-                <button type="button" class="btn btn-secondary">Cancelar</button>
-                <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
+                <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn btn-success" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
             </div>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <div class="d-flex justify-content-center">
                         <div>
-                            <p>Total: &nbsp; </p>
+                            <p class="parrafo">Total: &nbsp; </p>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <asp:Label Text="Total" runat="server" ID="lblTotal" />
+                            <asp:Label Text="Total" runat="server" CssClass="parrafo" ID="lblTotal" />
                         </div>
                     </div>
                 </ContentTemplate>
@@ -108,7 +108,7 @@
 
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#4c5459" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#602a06" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EFF3FB" />
                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -121,8 +121,7 @@
         </asp:UpdatePanel>
 
         <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar Venta" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnFinalizar_Click" />
+            <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar Venta" CssClass="btn btn-danger" UseSubmitBehavior="False" OnClick="btnFinalizar_Click" />
         </div>
     </div>
 
@@ -150,5 +149,47 @@
 
         }
     </script>
+    <script>    
+        function cantidadCaracteres(elem, cantidad, lblMensaje) {
+            let max = cantidad;
+            input = document.getElementById(elem).value.length;
+            boton = document.getElementById("<%=btnArticulo.ClientID%>");
+            boton2 = document.getElementById("<%=btnFinalizar.ClientID%>");
+            mensaje = document.getElementById(lblMensaje);
+            if (input > max) {
+                boton.disabled = true;
+                boton2.disabled = true;
+                mensaje.innerHTML = "Demasiado Largo!";
+                mensaje.style.color = "red";
+            }
+            else {
+                boton.disabled = false;
+                mensaje.innerHTML = "";
+                boton2.disabled = false;
+            }
+        }
+    </script>
+      <script>
+          function solonmeros(e) {
+
+              var key;
+
+              if (window.event) // IE
+              {
+                  key = e.keyCode;
+              }
+              else if (e.which) // Netscape/Firefox/Opera
+              {
+                  key = e.which;
+              }
+
+              if (key < 48 || key > 57) {
+                  return false;
+              }
+
+              return true;
+          }
+
+      </script>
 
 </asp:Content>

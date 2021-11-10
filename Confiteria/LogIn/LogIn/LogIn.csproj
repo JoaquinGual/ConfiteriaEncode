@@ -69,17 +69,24 @@
   <ItemGroup>
     <Content Include="css\estilos.css" />
     <Content Include="css\Style.css" />
+    <Content Include="Default.aspx" />
     <Content Include="GenerarFactura.aspx" />
-    <Content Include="Index.aspx" />
     <Content Include="Lista.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Master-Page.Master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Resources\Fonts\FuturaNowHeadlineExtraBlack.woff" />
+    <Content Include="Resources\Fonts\FuturaNowHeadlineBold.woff" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Mozos.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="RegistroArticulos.aspx" />
     <Content Include="RegistroRubros.aspx" />
+    <Content Include="Resources\editarimg.png" />
+    <Content Include="Resources\Fonto.jpg" />
+    <Content Include="Resources\SalesSystem.png" />
+    <Content Include="RVentaPorMozo.aspx" />
+    <Content Include="RVentaTotalPorDia.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -88,19 +95,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GenerarFactura.aspx.cs">
       <DependentUpon>GenerarFactura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GenerarFactura.aspx.designer.cs">
       <DependentUpon>GenerarFactura.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lista.aspx.cs">
       <DependentUpon>Lista.aspx</DependentUpon>
@@ -151,6 +158,20 @@
     </Compile>
     <Compile Include="RegistroRubros.aspx.designer.cs">
       <DependentUpon>RegistroRubros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RVentaPorMozo.aspx.cs">
+      <DependentUpon>RVentaPorMozo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RVentaPorMozo.aspx.designer.cs">
+      <DependentUpon>RVentaPorMozo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RVentaTotalPorDia.aspx.cs">
+      <DependentUpon>RVentaTotalPorDia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RVentaTotalPorDia.aspx.designer.cs">
+      <DependentUpon>RVentaTotalPorDia.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

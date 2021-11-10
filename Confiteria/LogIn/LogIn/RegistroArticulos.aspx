@@ -27,8 +27,9 @@
             <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripcion" CssClass="form-control" name="descripcion"></asp:TextBox>
         </div>
         <div class="form-group col-md-4">
-            <asp:Label ID="lblPrecio" runat="server" Text="Precio"></asp:Label>
-            <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio" CssClass="form-control" name="precio"></asp:TextBox>
+            <asp:Label ID="lblPrecio" runat="server" Text="Precio"></asp:Label> 
+            <asp:TextBox ID="txtPrecio" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtPrecio', 8, 'lblPrecioMensaje')" ></asp:TextBox>
+            <span id="lblPrecioMensaje"></span>
         </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -40,8 +41,7 @@
 
 
     <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Articulo" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnRegistro_Click"  />
+        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Articulo" CssClass="btn btn-success" UseSubmitBehavior="False" OnClick="btnRegistro_Click"  />
     </div>
 
 
@@ -74,7 +74,7 @@
 
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#4c5459" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#602a06" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -104,7 +104,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <asp:Label ID="lblPrecioArticuloM" runat="server" Text="Precio del Articulo"></asp:Label>
-                                <asp:TextBox ID="txtPrecioArticuloM" runat="server" placeholder="Precio" CssClass="form-control" name="precio"></asp:TextBox>
+                                <asp:TextBox ID="txtPrecioArticuloM" runat="server" placeholder="Precio" CssClass="form-control" name="precio" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup="cantidadCaracteres('ContentPlaceHolder1_txtPrecioArticuloM', 8, 'mensajePrecio')" ></asp:TextBox>
+                                <span id="mensajePrecio"></span>
                             </div>
                         </div>
                         <div class="form-row d-flex justify-content-center">
@@ -133,6 +134,26 @@
             </div>
         </div>
     </div>
+     <script>    
+         function cantidadCaracteres(elem, cantidad, lblMensaje) {
+             let max = cantidad;
+             input = document.getElementById(elem).value.length;
+             boton = document.getElementById("<%=btnRegistro.ClientID%>");
+            boton2 = document.getElementById("<%=btnGuardar.ClientID%>");
+             mensaje = document.getElementById(lblMensaje);
+             if (input > max) {
+                 boton.disabled = true;
+                 boton2.disabled = true;
+                 mensaje.innerHTML = "Demasiado Largo!";
+                 mensaje.style.color = "red";
+             }
+             else {
+                 boton.disabled = false;
+                 mensaje.innerHTML = "";
+                 boton2.disabled = false;
+             }
+         }
+     </script>
   
     <script>
         function solonmeros(e) {
@@ -161,25 +182,37 @@
     
 
     <script>
+        function Rubro() {
+            setTimeout(function () { swal("Seleccione Rubro!"); }, 0);
+
+        }
+        function Descripcion() {
+            setTimeout(function () { swal("Ingrese Descripcion!"); }, 0);
+
+        }
+        function Precio() {
+            setTimeout(function () { swal("Ingrese Precio!"); }, 0);
+
+        }
         function MInsertOk() {
-            setTimeout(function () { swal("Articulo Registrado Correctamente!"); }, 1000);
+            setTimeout(function () { swal("Articulo Registrado Correctamente!"); }, 0);
 
         }
         function SelectBefore() {
-            setTimeout(function () { swal("Seleccione un Articulo!"); }, 500);
+            setTimeout(function () { swal("Seleccione un Articulo!"); }, 0);
 
         }
         function NotActive() {
-            setTimeout(function () { swal("Este Articulo ya no se encuentra activo!"); }, 500);
+            setTimeout(function () { swal("Este Articulo ya no se encuentra activo!"); }, 0);
 
         }
 
         function BajaOk() {
-            setTimeout(function () { swal("Articulo dado de baja correctamente!"); }, 500);
+            setTimeout(function () { swal("Articulo dado de baja correctamente!"); }, 0);
 
         }
         function MUpdateOk() {
-            setTimeout(function () { swal("Articulo Actualizado Correctamente!"); }, 500);
+            setTimeout(function () { swal("Articulo Actualizado Correctamente!"); }, 0);
 
         }
 

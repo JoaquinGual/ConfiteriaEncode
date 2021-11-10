@@ -20,6 +20,14 @@ namespace BusinessLogicLayer
         {
             return DALDetalle_Factura.detallePorId(id);
         }
+        public static OleDbDataReader ventasPorDia(DateTime fecha)
+        {
+            return DALDetalle_Factura.VentasPorDia(fecha);
+        }
+        public static OleDbDataReader ventasPorMozo(DateTime fecha)
+        {
+            return DALDetalle_Factura.VentasPorMozo(fecha);
+        }
         public static bool EliminarDetalle(Detalle_Factura df)
         {
             return DALDetalle_Factura.EliminarDetalle(df);
@@ -31,6 +39,10 @@ namespace BusinessLogicLayer
         public static decimal calcularTotal(int id, bool flag)
         {
             return DALDetalle_Factura.calcularTotal(id,flag);
+        }
+        public static decimal totalPorDia(DateTime fecha)
+        {
+            return DALDetalle_Factura.totalPorDia(fecha);
         }
     }
 }

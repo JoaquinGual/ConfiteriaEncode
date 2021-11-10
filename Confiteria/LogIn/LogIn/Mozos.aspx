@@ -39,8 +39,9 @@
     <div class="form-row d-flex justify-content-center mt-2">
         <div class="form-group col-md-4">
             <asp:Label ID="lblComision" runat="server" Text="Comision del Mozo"></asp:Label>
-            <asp:TextBox ID="txtComision" runat="server" placeholder="Comision del Mozo" CssClass="form-control" name="user" onkeypress="return solonmeros(event);"></asp:TextBox>
-        </div>
+            <asp:TextBox ID="txtComision" runat="server" placeholder="Comision del Mozo" CssClass="form-control" name="user" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false"  onkeyup=" cantidadCaracteres('ContentPlaceHolder1_txtComision', 2, 'mensajeComision')"></asp:TextBox>
+            <span id="mensajeComision"></span>
+            </div>
     </div>
     <div class="d-flex justify-content-center">
         <div class="form-group col-md-12 d-flex justify-content-sm-center">
@@ -51,8 +52,7 @@
 
 
     <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Mozo" CssClass="btn login_btn" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
+        <asp:Button ID="btnRegistro" runat="server" Text="Registrar Mozo" CssClass="btn btn-success" UseSubmitBehavior="False" OnClick="btnRegistro_Click" />
     </div>
 
 
@@ -66,7 +66,7 @@
                 <AlternatingRowStyle BackColor="White" />
 
                 <Columns>
-                    <asp:CommandField ShowSelectButton="true" ButtonType="Button" ControlStyle-CssClass="btn-outline-dark" ShowHeader="False" />
+                    <asp:CommandField ShowSelectButton="true" ButtonType="Button" ControlStyle-CssClass="btn-outline-dark" ShowHeader="False"  />
                     <asp:BoundField DataField="pIdMozo" HeaderText="ID" />
                     <asp:BoundField DataField="pNombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="pApellido" HeaderText="Apellido" />
@@ -86,7 +86,7 @@
 
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#4c5459" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#602a06" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EFF3FB" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -116,14 +116,15 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <asp:Label ID="lblApellidoMozo" runat="server" Text="Apellido del Mozo"></asp:Label>
-                                <asp:TextBox ID="txtApellidoMozoM" runat="server" placeholder="Apellido" CssClass="form-control" name="apellido"></asp:TextBox>
+                                <asp:TextBox ID="txtApellidoMozoM" runat="server" placeholder="Apellido" CssClass="form-control" name="apellido" ></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-row d-flex justify-content-center">
                             <div class="form-group col-md-4">
                                 <asp:Label ID="lblComisionMozo" runat="server" Text="Comision"></asp:Label>
-                                <asp:TextBox ID="txtComisionMozoM" runat="server" placeholder="Comision" CssClass="form-control" name="comision" onkeypress="return solonmeros(event);"></asp:TextBox>
-                            </div>
+                                <asp:TextBox ID="txtComisionMozoM" runat="server" placeholder="Comision" CssClass="form-control" name="comision" onkeypress="return solonmeros(event);" oncopy="return false" onpaste="return false" onkeyup=" cantidadCaracteres('ContentPlaceHolder1_txtComisionMozoM', 2, 'lblComisionMensaje')"></asp:TextBox>
+                                <span id="lblComisionMensaje"></span>
+                                </div>
 
                             <div class="form-group col-md-4 ml-1">
                                 <asp:Label ID="lblSucursalMozo" runat="server" Text="Sucursal"></asp:Label>
@@ -149,6 +150,26 @@
             </div>
         </div>
     </div>
+    <script>    
+        function cantidadCaracteres(elem, cantidad, lblMensaje) {
+            let max = cantidad;
+            input = document.getElementById(elem).value.length;
+            boton = document.getElementById("<%=btnRegistro.ClientID%>");
+            boton2 = document.getElementById("<%=btnGuardar.ClientID%>");
+            mensaje = document.getElementById(lblMensaje);
+            if (input > max) {
+                boton.disabled = true;
+                boton2.disabled = true;
+                mensaje.innerHTML = "Demasiado Largo!";
+                mensaje.style.color = "red";
+            }
+            else {
+                boton.disabled = false;
+                mensaje.innerHTML = "";
+                boton2.disabled = false;
+            }
+        }
+    </script>
   
     <script>
         function solonmeros(e) {
@@ -177,6 +198,26 @@
     
 
     <script>
+       
+
+        function Combo() {
+            setTimeout(function () { swal("Seleccione Sucursal!"); },0);
+
+        }
+        function Nombre() {
+            setTimeout(function () { swal("Ingrese Nombre"); },0);
+
+        }
+        function Apellido() {
+            setTimeout(function () { swal("Ingrese Apellido!"); }, 0);
+
+        }
+
+        function Comision() {
+            setTimeout(function () { swal("Ingrese Comision!"); }, 0);
+
+        }
+
         function MInsertOk() {
             setTimeout(function () { swal("Mozo Registrado Correctamente!"); }, 1000);
 
